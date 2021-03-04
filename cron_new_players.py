@@ -88,7 +88,7 @@ for item in result:
 
             # if so then move it to the new name (dw about fixing double redirects, whatever)
             if target_page_name is not None:
-                site.client.pages[name].save("#REDIRECT[{}]".format(target_page_name), summary=summary2)
+                site.client.pages[name].save("#REDIRECT[[{}]]".format(target_page_name), summary=summary2)
                 site.client.pages['tournament'].touch()
                 site.client.pages[name].touch()
                 site.client.pages[target_page_name].touch()
