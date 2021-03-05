@@ -43,7 +43,8 @@ for template in wikitext.filter_templates():
 
 lmt = 0
 for item in result:
-    print(item)
+    if not quiet:
+        print(item)
     if lmt == limit:
         break
     lmt = lmt + 1
