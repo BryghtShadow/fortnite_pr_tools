@@ -112,6 +112,6 @@ class PointUpdater(object):
 
 if __name__ == '__main__':
     credentials = AuthCredentials(user_file="me")
-    fn_site = EsportsClient('fortnite', credentials=credentials)  # set wiki
+    fn_site = EsportsClient('fortnite-esports', credentials=credentials)  # set wiki
     point_updater = PointUpdater(fn_site)
     point_updater.run()

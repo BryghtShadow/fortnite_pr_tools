@@ -4,7 +4,7 @@ import mwparserfromhell, datetime
 
 limit = -1
 
-site = EsportsClient('fortnite', user_file="bot")  # Set wiki
+site = EsportsClient('fortnite-esports', user_file="bot")  # Set wiki
 summary = 'Automatically setting active/inactive status'
 
 
