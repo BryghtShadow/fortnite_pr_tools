@@ -6,7 +6,7 @@ limit = -1
 quiet = True
 
 credentials = AuthCredentials(user_file="me")
-site = EsportsClient('fortnite', credentials=credentials)  # set wiki
+site = EsportsClient('fortnite-esports', credentials=credentials)  # set wiki
 summary = 'Automatically create player pages for Power Rankings'
 summary2 = 'Automatically creating redirect for Power Rankings'
 
