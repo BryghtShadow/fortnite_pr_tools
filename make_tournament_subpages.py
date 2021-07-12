@@ -1,5 +1,5 @@
-from river_mwclient.auth_credentials import AuthCredentials
-from river_mwclient.esports_client import EsportsClient
+from mwrogue.auth_credentials import AuthCredentials
+from mwrogue.esports_client import EsportsClient
 from re import search
 
 pages_to_make = [
@@ -43,7 +43,5 @@ for i, page in enumerate(site.pages_using('Infobox Player')):
         continue
     for item in this_pages:
         subpage = item['pattern'].format(page.name)
-        if site.client.pages[subpage].exists:
-            continue
         print('Saving page %s...' % page.name)
-        site.client.pages[subpage].save(item['text'], summary=summary)
+        site.save_title(subpage, item['text'], summary=summary)
