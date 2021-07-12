@@ -10,6 +10,10 @@ pages_to_make = [
                 'pattern': '{}/Tournament Results',
                 'text': '{{PlayerTabsHeader}}\n{{PlayerResults|show=everything}}',
             },
+            {
+                'pattern': 'Tooltip:{}',
+                'text': '{{PlayerTooltip}}',
+            }
         ]
     },
 ]
