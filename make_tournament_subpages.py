@@ -1,6 +1,5 @@
 from mwrogue.auth_credentials import AuthCredentials
 from mwrogue.esports_client import EsportsClient
-from re import search
 
 pages_to_make = [
     {
@@ -23,7 +22,7 @@ summary = 'Automatically creating subpages/dependent pages'
 credentials = AuthCredentials(user_file="bot")
 site = EsportsClient('fortnite-esports', credentials=credentials)  # Set wiki
 
-startat_page = 'Qlut0'
+startat_page = 'Myth'
 passed_startat = False
 
 for i, page in enumerate(site.pages_using('Infobox Player')):
