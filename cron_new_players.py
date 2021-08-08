@@ -21,11 +21,11 @@ summary2 = 'Automatically creating redirect for Power Rankings'
 # list-type fields were a mistake
 
 result = site.cargo_client.query(
-    tables='TournamentResults=TR,TournamentResults__RosterLinks=RL,_pageData=PD,Tournaments=T',
-    join_on='TR._ID=RL._rowID,RL._value=PD._pageName,TR.OverviewPage=T._pageName',
-    where='PD._pageName IS NULL AND RL._value IS NOT NULL AND TR.PRPoints > "0"',
-    fields='TR._pageName=tournament,RL._value=name,T.Region=res, TR.RosterLinks__full=RosterLinks, TR.RosterIds__full=RosterIds',
-    group_by='RL._value',
+    tables='TournamentResults=TR, TournamentResultsPlayers=TRP, _pageData=PD, Tournaments=T',
+    join_on='TR.ResultId=TRP.ResultId, TRP.Link=PD._pageName, TR.OverviewPage=T._pageName',
+    where='PD._pageName IS NULL AND TRP.Link IS NOT NULL AND TR.PRPoints > "0"',
+    fields='TR._pageName=tournament, TRP.Link=name, T.Region=res, TR.RosterLinks__full=RosterLinks, TR.RosterIds__full=RosterIds',
+    group_by='TRP.Link',
     limit='max'
 )
 if not quiet:
